@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>Setting up a Sleek Node JS Server and a Simple Bootstrap Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles -->
+  <link href="public/docs/assets/css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+     padding-top: 60px;
+     padding-bottom: 40px;
+    }
+    .sidebar-nav {
+     padding: 9px 0;
+    }
+    @media (max-width: 980px) {
+     /* Enable use of floated navbar text */
+     .navbar-text.pull-right {
+      float: none;
+      padding-left: 5px;
+      padding-right: 5px;
+     }
+    }
+  </style>
+  <link href="public/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+  <script src="public/docs/assets/js/html5shiv.js"></script><![endif]-->
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/docs/assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="public/docs/assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="public/docs/assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="public/docs/assets/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="public/docs/assets/ico/favicon.png">
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="brand">CS Tablet</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="active"><a href="/">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Contact</li>
+            <li><a href="http://govindadasu.com" target="_blank">Govinda Dasu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span9">
+        <!-- have facebook comments for support (hide under each h2)-->
+        <!-- have it be spoken to you option-->
+        <h1>Setting up a Sleek Node JS Server </h1>
+        <h2>... and a Simple Bootstrap Website</h2>
+        <br>
+        <div class="fb-like" data-href="http://cstablet.org" data-send="true" data-width="450" data-show-faces="true"></div>
+        <hr>
+        <p>My goal is to teach you the basic computer skills every entrepreneur needs to set up a landing page for his or her company. Because I will also teach you how to set up a server, this landing page can be expanded into a full fledged website at any time. </p>
+        <hr>
+        <h2>1. What is a computer?</h2>
+        <p>A computer is "an electronic device for storing and processing data, typically in binary form, according to instructions given to it in a variable program" (Oxford English Dictionary 2013). In layman's terms, whatever you are using to access this website is a computer. </p>
+        <hr>
+        <h2>2. What is a server?</h2>
+        <p>A server is "a computer or computer program that manages access to a centralized resource or service in a network" (Oxford English Dictionary 2013). In layman's terms, a server is a giant computer whose sole purpose is to receive requests for a website from other computers and respond with the content of the website. For instance, when you go to <a href="http://google.com" target="_blank">google.com </a>in a browser, your request for <a href="http://google.com" target="_blank">google.com </a>is trasmitted via the internet to the google server. The google server then sends back some content. The content in this case is the familiar white page with the colorful <i>Google </i>letters and a search bar underneath. </p>
+        <hr>
+        <h2>3. Building the Website</h2>
+        <p>We are going to use the programming language javascript to build our server. The server side javascript we will use is called node.js. </p>
+        <p>We will put all our work in a folder as any organized person would. Then, we will connect this folder to GitHub which is a service that employs the Git revision control system. A revision control system is a way of managing "changes to documents, computer programs, large web sites, and other collections of information" (Wikipedia 2013). </p>
+        <p>In layman's terms, GitHub is a server (recall what server means) that stores a version of our folder every time we ask it to. The collection of these versions is known as a GitHub repository. It is just like saving a version of your essay on Word, except this time its for an entire folder rather than one document. Moreover, different people can connect their own folders to the same GitHub repository. Everytime they push a version of their folder, that version will be saved as well and marked as the latest. You can work other people this way. Everyone simply pushes and pulls content from a single repository on the remote GitHub server. Don't worry too much about how this is done specifically, because we will go over that later. </p>
+        <ol>
+          <li>Go to <a href="http://nodejs.org" target="_blank">nodejs.org </a>and press install. </li>
+          <li> Double click on the downloaded package and keep following the installer's instructions until the installer tells you that you have successfully installed node.js on your computer. </li>
+          <li>Go to <a href="http://github.com" target="_blank">github.com</a>. Create an account and login or just login if you already have an account. </li>
+          <li>Complete the following two GitHub tutorials: <a href="https://help.github.com/articles/set-up-git" target="_blank">Set Up Git</a> (Skip Password Caching), <a href="https://help.github.com/articles/create-a-repo" target="_blank">Create A Repo</a>. By then end of the tutorials, you should have a command line interface (Terminal or Git Bash) open and should be inside the ~/Hello-World directory. </li>
+          <li>(Recommended but not required) Before you can start coding, you must learn the language javascript. Complete the Codeacademy <a href="http://www.codecademy.com/tracks/javascript" target="_blank">Javascript Tutorial</a>. This step will take hours but you will have learned an entire programming language at the end of it. Plus, you will know what functions, for loops, while loops, control flow, data structures, and objects are. There is no point in me creating another tutorial on programming basics when so many exist like <a href="https://www.khanacademy.org/cs" target="_blank">Khan Academy</a>, <a href="http://codehs.com/" target="_blank">Code HS</a>, and <a href="http://scratch.mit.edu/" target="_blank">Scratch</a>. For our purposes, I think the best is Codeacademy so that is why I am recommending it. </li>
+          <li>Now that you have learned javascript, go to <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>. Download and install the latest version of Sublime Text for your computer. </li>
+          <li>Open the Sublime Text application and press File->Open. Find the ~/Hello-World directory and open the entire thing with Sublime Text (Yes you can open entire directories with Sublime Text). </li>
+          <li> Right Click (Control Click for Mac) on Hello-World and create a new file called "package.json". Add the following to package.json and then save it. 
+            <pre>{
+&nbsp"name": "app",
+&nbsp"description": "app",
+&nbsp"version": "0.0.1",
+&nbsp"private": true,
+&nbsp"dependencies": 
+&nbsp{
+&nbsp&nbsp"express": "3.2.0",
+&nbsp&nbsp"jade": "*",
+&nbsp&nbsp"stylus": "*",
+&nbsp&nbsp"nib": "*",
+&nbsp&nbsp"mongodb": "*",
+&nbsp&nbsp"mongoose": "*",
+&nbsp&nbsp"validator": "*",
+&nbsp&nbsp"express-mailer": "*"
+&nbsp}
+}</pre>
+          </li>
+          <li>In your command line interface execute <code>npm install</code> . This installs all the dependencies that we will need in our effort. A dependency is a package (also called a module) of software that is downloaded and installed into your node_modules folder which should exist inside your Hello-World folder. 
+            <ul>
+              <li>The "name", "description", "version", and "private" fields inform the nodejs framework that the name, description, version, and privacy settings of the app we are building are "app", "app", "0.0.1", and true (meaning private). </li>
+              <li>The "dependencies" field informs the nodejs framework that we need some software built by others and available on GitHub. </li>
+              <li>We need version "3.2.0" of the "express" framework, which essentially is a layer of software over nodejs that completes some of the intricacies of server building. </li>
+              <li>We need "jade" which is an engine that allows us to write a simplified form of html. (The markup language used to write the content of a webpage. "A markup language is a modern system for annotating a document in a way that is syntactically distinguishable from the text. The idea evolved from the 'marking up' of paper manuscripts, i.e., the revision instructions by editors, traditionally written with a blue pencil on authors' manuscripts. In digital media this 'blue pencil instruction text' was replaced by tags, that is, instructions are expressed directly by tags or 'instruction text encapsulated by tags'" (Wikipedia 2013). If you right click on this page and you click "view source", you will see the html behind the current page. The browser converts the html to the formatted page you see.) The jade engine converts the simplified html into real html (the kind of code you saw by viewing source). To see an example of html code being converted to jade, visit this <a href="http://html2jade.aaron-powell.com/" target="_blank">Html To Jade Converter</a>. The <code>"*"</code>&nbsp in <code>"jade": "*"</code>&nbspspecifies that we want the latest version of jade from GitHub. </li>
+              <li>In order to support the express framework, we need to install a package called "stylus" which does what jade does for CSS. CSS is a "style sheet language used to describe the presentation semantics (the look and formatting) of a document written in a markup language. Its most common application is to style web pages written in HTML" (Wikipedia 2013). Stylus basically takes simplified CSS code and converts it to real CSS code. </li>
+              <li>The package "nib" helps stylus with web graphics. </li>
+              <li>The package "mongodb" sets up a database on our server. A database is "a structured set of data held in a computer, esp. one that is accessible in various ways" (Oxford English Dictionary 2013). </li>
+              <li>The package "mongoose" provides "elegant mongodb object modeling for nodejs" (mongoosejs.com). You should have learned what objects are in the Code Academy Tutorial.</li>
+              <li>The package "validator" is a service that parses emails and checks whether they are valid using regular expressions which you can learn about on wikipedia.</li>
+              <li>The package "express-mailer" is a services that allows our express nodejs server to send emails with ease. </li>
+            </ul>
+          </li>
+          <li>(Recommended but not required) Finally download Bootstrap by executing <code>git clone git://github.com/twitter/bootstrap.git</code> in the command line inside the Hello-World folder. Bootstrap is a front-end framework. Essentially, it is a bunch of software that uses its own CSS code to style your HTML code for you.</li>
+          <li>As you may have inferred, HTML and CSS are extremely important for building websites. In fact they are so important that you should stop all you are doing right now to complete the Codeacademy <a href="http://www.codecademy.com/tracks/web" target="_blank">HTML and CSS Tutorial</a>. This step will take hours but you will have learned everything about building static front-end web pages by the end of it. </li>
+          <li>Right Click (Control Click for Mac) on the bootstrap folder and rename it "public" to mark it as a folder that is public. We will learn more about what public means shortly. </li>
+          <li>Right Click (Control Click for Mac) on Hello-World and create a new folder called "views". This is where we will put all the jade views for our website. Download the <a href="/cs_tablet_files/head.jade">head</a>, <a href="/cs_tablet_files/index.jade">	index</a>, <a href="/cs_tablet_files/navbar.jade">navbar</a>, <a href="/cs_tablet_files/script-load.jade">script-load</a>, and <a href="/cs_tablet_files/side-navbar.jade">side-navbar </a>jade files and place them in the views directory. 
+            <ul> 
+              <li>The "head" file represents the head of the html page for every page on our website. It includes the title, meta tags, style sheet inclusions, etc. </li>
+              <li>The "index" file is the index or home page of the website. </li>
+              <li>The "navbar" is of course the html for the navbar. </li>
+              <li>The "script-load" is a chunk of calls to include bootstrap's custom javascript modules. </li>
+              <li>The "side-navbar" is simple html to produce the side navigation display. </li>
+            </ul>
+          </li>
+          <li>Right Click (Control Click for Mac) on Hello-World and create a new file called "app.js". Add the following to app.js and then save it. Then execute <code>node app.js</code> in the command line to start the server. 
+            <pre class="pre-scrollable">// init module usage
+var express = require('express')
+var stylus = require('stylus')
+var nib = require('nib')
+var check = require('validator').check,
+&nbsp&nbsp&nbsp&nbspsanitize = require('validator').sanitize
+
+// init db and app
+var app = express()
+
+// init jade compiler
+function compile(str, path) {
+&nbspreturn stylus(str)
+&nbsp.set('filename', path)
+&nbsp.use(nib())
+}
+
+// init views
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade')
+app.use(express.logger('dev'))
+app.use(stylus.middleware({ 
+&nbspsrc: __dirname + 'public',
+&nbspcompile: compile
+}))
+
+app.configure('development', function(){
+&nbspapp.use(express.errorHandler())
+&nbspapp.locals.pretty = true
+})
+
+// init static public directory
+app.use(express.static(__dirname + 'public'))
+
+// render pages
+&nbspapp.get('/', function(req, res){
+&nbspres.render('index', {title: 'hello world'})
+})
+
+// listen on port
+app.listen(7777)
+              <code_snip_2></code_snip_2></pre>
+            <ul>
+              <li>Every server is just a program that accepts requests for URI's (the "govindadasu" in "facebook.com/govindadasu" or the "visionmedia/jade" in "https://github.com/visionmedia/jade") and responds with the website content. This "app.js" we have just saved is that program. "app.js" is the server. </li>
+              <li>The code under the "init module usage" comment tells that our server needs to employ the express, stylus, nib, and validator modules. We import the validator module's check and sanitize objects separately, the former of which checks whether an email address is valid and the latter of which cleans up email strings.    </li>
+              <li>The code under "init app" essentially creates an app object as an instance of the express class (note the use of the express class constructor). In this way, the express framework has done much of the heavy lifting in setting up a server.</li>
+              <li>The code under "init views" has the app initialize the primary directory for views (front-end html code) to be 'views' and the view engine to be Jade (meaning the views directory will actually hold jade files which will be compiled to html using the jade engine). We declare to the express logger that we are working on a development (dev) version. We tell it to make the 'public' folder a static public folder meaning everything in it is accessible to the public and we don't have to specify using app.get how to render that url. One simply goes to "localhost:7777/[Directory Name inside public folder]/[file]" to view the public file. For instance visit "http://localhost:7777public/docs/index.html". Finally, the app.configure command tells the app to use the express errorHandler and set the app.locals.pretty boolean to true.</li>
+              <li>The code under "init static public directory" completes the declaration of the public folder as a public static folder. </li>
+              <li>The code under "render pages" tells the app how to map a URI request to a view. For instance, a request for the home page (the URI "/") should be mapped to the view called index. </li>
+              <li>The code under "listen on port" tells the app to respond to requests on port 7777. Now, go to "localhost:7777/" in in your browser to view the website. </li>
+            </ul>
+          </li>
+        </ol>
+        <div class="fb-comments" data-href="http://cstablet.org" data-width="800" data-num-posts="10"></div>
+      </div>
+    </div>
+  </div>
+</body>
